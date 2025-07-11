@@ -1,58 +1,92 @@
-# PRODIGY_FS_03
-
+PRODIGY_FS_03
 📝 Project Title: Local Store E-commerce Platform
 🎯 Task Number: 03
 🏢 Internship Provider: Prodigy Infotech
-📄 Description:
-The Local Store E-commerce Platform is a web-based shopping application designed for small businesses or local stores. It enables customers to browse, view, and purchase products directly through the website. The platform is built using HTML, CSS, and JavaScript to ensure smooth frontend interactivity and responsiveness.
+1. Project Description
+The Local Store E-commerce Platform is a responsive web-based shopping application tailored for local shops and small businesses. It allows users to:
 
-✅ Features Implemented:
-🖼 Product Listings with names, images, prices, and descriptions
+Browse available products
 
-🛒 Shopping Cart System
+View detailed product information
 
-Add to Cart functionality
+Add selected items to a shopping cart
 
-Cart summary with total payment
+Adjust quantities before purchasing
 
-Quantity control with +/− buttons
+See a final bill and complete the checkout process
 
-Remove product if quantity becomes 0
+The platform is developed using core web technologies to ensure clean structure, styling, and interactive features without using any frameworks.
 
-💳 Buy Now button with confirmation alert
+2. Features Implemented
+2.1 Product Listing
+Each product displays:
 
-📱 Responsive 3x3 product layout using CSS Grid
+Name
 
-🎨 Clean, modern UI with gradient backgrounds and styled buttons
+Image
 
-💡 Optional Features To Add (Future Scope):
-🔍 Product search, sort, and filter functionality
+Price
 
-⭐ User reviews & ratings
+Description
 
-📦 Order tracking system
+2.2 Shopping Cart System
+Add to Cart functionality for each product
 
-💬 Customer support chat or contact form
+Cart summary displaying:
 
-🔐 User authentication for customers/admin
+Product name
 
-👩‍💻 Tech Stack:
-HTML5 – Page structure
+Quantity
 
-CSS3 – Styling and layout
+Price per item
 
-JavaScript (ES6) – Cart logic and DOM handling
+Total amount
 
-LocalStorage – Temporary data storage (cart)
+2.3 Quantity Controls
+"+" and "−" buttons to adjust item quantities
 
-📂 Submission Package Includes:
-index.html – Homepage with product listings
+Item is removed if quantity becomes zero
 
-cart.html – Shopping cart with quantity and total
+2.4 Buy Now Button
+Confirmation message shown when clicked
 
-style.css – Fully responsive design
+Clears cart and returns to home
 
-script.js – Dynamic interactivity with localStorage
+2.5 Layout and Design
+3x3 responsive product grid using CSS Grid
 
-images/ – Product images for display
+Clean, modern interface with gradient background
+
+Styled buttons and interactive feedback on click
+
+3. Optional Features for Future Implementation
+🔍 Product search, sorting, and filtering
+
+⭐ Customer ratings and user reviews
+
+📦 Order tracking functionality
+
+💬 Contact form or chatbot for customer support
+
+🔐 Login/signup system with role-based access control
+
+4. Tech Stack Used
+HTML5 – For semantic and structured web content
+
+CSS3 – For layout, styling, and responsiveness
+
+JavaScript (ES6) – To manage cart logic, events, and interactivity
+
+LocalStorage – To store cart data in the browser temporarily
+
+5. Submission Package Includes
+index.html – Main product listing page
+
+cart.html – Shopping cart page with quantity controls and total calculation
+
+style.css – Complete responsive design
+
+script.js – All cart logic and UI behavior
+
+images/ – Folder containing all product image files
 
