@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>Your Cart</h1>
+    <a href="index.html" class="cart-link">← Back to Store</a>
+  </header>
+
+  <main class="product-grid" id="cart-container"></main>
+
+  <div class="cart-summary">
+    <h2 id="total-amount"></h2>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const container = document.getElementById('cart-container');
+    const totalAmount = document.getElementById('total-amount');
+
+    function updateCartUI() {
+      container.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1 / -1; text-align:center">Your cart is empty.</p>';
+        totalAmount.textContent = '';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+
+        const div = document.createElement('div');
+        div.className = 'product-card';
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="product-details">
+            <h3>${item.name}</h3>
+            <p class="price">₹${item.price}</p>
+            <p class="desc">
+              Quantity:
+              <button class="qty-btn" onclick="updateQuantity(${index}, -1)">−</button>
+              <span>${item.quantity}</span>
+              <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+            </p>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+
+      totalAmount.textContent = `Total Payment: ₹${total.toFixed(2)}`;
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function updateQuantity(index, change) {
+      cart[index].quantity += change;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    document.querySelector('.buy-btn').addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+      }
+      alert("✅ Thank you! Your payment was successfully done.");
+      cart = [];
+      localStorage.removeItem('cart');
+      updateCartUI();
+      window.location.href = "index.html";
+    });
+
+    updateCartUI();
+  </script>
+</body>
+</html>
